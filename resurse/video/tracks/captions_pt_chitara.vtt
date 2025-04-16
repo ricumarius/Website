@@ -1,0 +1,30 @@
+WEBVTT - Subtitrări Chitară
+
+STYLE
+::cue {
+  color: white;
+  background: transparent;
+  text-shadow: 2px 2px 4px black;
+}
+
+::cue(#sus) {
+  position: absolute;
+  top: 5%;
+  text-align: center;
+}
+
+::cue(#jos) {
+  position: absolute;
+  bottom: 100%;
+  text-align: center;
+}
+
+
+00:00:01.000 --> 00:00:05.000 line:10%
+O să arăt <b>o scurtă</b> prezentare!.....
+
+00:00:06.000 --> 00:00:10.000 line:90%
+Chitara are 6 coarde....
+
+00:00:06.000 --> 00:00:11.000 line:10%
+<u> Aceasta </u> fiind făcută din metal

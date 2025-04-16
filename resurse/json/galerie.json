@@ -1,0 +1,68 @@
+{
+    "cale_galerie": "resurse/imagini/galerie",
+    "imagini": [
+        {
+            "fisier": "chitara1.png",
+            "titlu": "Ibanez AZ2204NW-MGR",
+            "descriere": "Body: Alder",
+            "sfert_ora": "1",
+            "licenta": "CC-BY",
+            "autor": "Ibanez",
+            "sursa": "https://www.ibanez.com/eu/products/detail/az2204nw_00_02.html"
+        },
+        {
+            "fisier": "chitara2.png",
+            "titlu": "Ibanez AZ47P1QM-DEB",
+            "descriere": "Body: American basswood",
+            "sfert_ora": "2"
+        },
+        {
+            "fisier": "chitara3.png",
+            "titlu": "Ibanez AZ2402-GRM",
+            "descriere": "Body: Alder",
+            "sfert_ora": "3"
+        },
+        {
+            "fisier": "chitara4.png",
+            "titlu": "Ibanez AZ2204NWL-MGR",
+            "descriere": "Body: Alder",
+            "sfert_ora": "4"
+        },
+        {
+            "fisier": "chitara5.png",
+            "titlu": "Ibanez GRGM21M-BLT",
+            "descriere": "Body: Basswood",
+            "sfert_ora": "1"
+        },
+        {
+            "fisier": "chitara6.png",
+            "titlu": "Ibanez RG652AHM-NGB",
+            "descriere": "Body: Ash",
+            "sfert_ora": "2"
+        },
+        {
+            "fisier": "chitara7.png",
+            "titlu": "Ibanez PS60-SSL",
+            "descriere": "Body: Poplar",
+            "sfert_ora": "3"
+        },
+        {
+            "fisier": "chitara8.png",
+            "titlu": "Ibanez TOD10 Tim Henson",
+            "descriere": "Body: American basswood",
+            "sfert_ora": "4"
+        },
+        {
+            "fisier": "chitara9.png",
+            "titlu": "Ibanez GRGR221PA-AQB",
+            "descriere": "Body: Okoume",
+            "sfert_ora": "1"
+        },
+        {
+            "fisier": "chitara10.png",
+            "titlu": "Ibanez RG550-PN",
+            "descriere": "Body: Basswood",
+            "sfert_ora": "2"
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+ul.meniu {
+    li {
+        div.imag-icon {
+            display: block;
+        }
+
+        div.text-icon {
+            display: none;
+        }
+    }
+}
+
+.hamburger {
+    >img {
+        display: block;
+        max-height: 10px;
+    }
+}
+
+.navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spatiu-mic);
+}
+
+.meniu {
+    flex-direction: column;
+    align-items: center;
+
+    a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.gallery-images {
+    img {
+        width: calc(50% - var(--spatiu-mic));
+    }
+}

@@ -1,0 +1,33 @@
+WEBVTT - Subtitrări Chitară
+
+STYLE
+::cue {
+  color: white;
+  background: transparent;
+  text-shadow: 2px 2px 4px black;
+}
+
+::cue(#sus) {
+  position: absolute;
+  top: 5%;
+  text-align: center;
+}
+
+::cue(#jos) {
+  position: absolute;
+  bottom: 100%;
+  text-align: center;
+}
+
+
+00:00:01.000 --> 00:00:05.000 line:10%
+I'll show you <b>a short</b> presentation!
+
+00:00:06.000 --> 00:00:10.000 line:90%
+the guitar has 6 strings
+
+00:00:06.000 --> 00:00:11.000 line:10%
+<u> its made </u> of steel
+
+
+
