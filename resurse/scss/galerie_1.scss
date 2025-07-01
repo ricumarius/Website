@@ -1,0 +1,38 @@
+
+// @keyframes clip-diagonal {
+// 	0% {
+// 		clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+// 	}
+// 	100% {
+// 		clip-path: polygon(100% 0%, 100% 0%, 0% 100%, 0% 100%);
+// 	}
+// }
+// .galerie {
+// 	width: 400px;
+// 	margin: 30px auto;
+// 	border: 15px solid transparent;
+// 	border-image: url('/resurse/imagini/border.png') 30 round;
+// 	.gallery-single { position: relative;
+// 	width: 100%;
+// 	height: 100%;
+// 	overflow: hidden;
+// 	cursor: pointer;
+// 	img { width: 100%;
+// 	height: 100%;
+// 	object-fit: cover;
+// 	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+// 	animation-fill-mode: forwards;
+// 	animation-duration: 1.5s;
+// 	animation-timing-function: ease-in-out;
+// 	animation-name: none;
+// 	transition: filter 0.3s ease;
+// 	will-change: clip-path;
+// }}}
+// & {
+// 	&:hover {
+// 		img {
+// 			filter: brightness(0.85);
+// 			animation-play-state: paused !important;
+// 		}
+// 	}
+// }

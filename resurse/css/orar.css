@@ -1,0 +1,58 @@
+/* Stil pentru containerul orar */
+#schedule-container {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 2px solid #333;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    width: 300px;
+    font-family: Arial, sans-serif;
+  }
+  
+  #schedule-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+  }
+  
+  #schedule-container th,
+  #schedule-container td {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  #schedule-container th {
+    background-color: #03045E;
+  }
+  
+  .today {
+    background-color: #ffd54f;
+    /* galben */
+    font-weight: bold;
+  }
+  
+  #status {
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+  
+  #close-schedule {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  #open-schedule {
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #7a7aae;
+  }

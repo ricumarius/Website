@@ -1,0 +1,24 @@
+#comparare-produse {
+    padding: 2rem;
+    font-family: sans-serif;
+    color: black;
+  }
+  
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+  }
+  
+td, th {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+th{
+  background-color: #03045E;
+  color: white;
+  border-bottom: 0.188rem solid #ff7961;
+
+}

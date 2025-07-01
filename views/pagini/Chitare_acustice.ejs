@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <title>LOUD MUSIC</title>
+  <meta name="keywords" content="Instrumente Muzicale, Chitara, Boxe, Microfon, Tobe, Pian, Monitoare de Studio, Reparații, Sintetizator, Reduceri">
+  <meta name="description" content="Magazin de instrumente muzicale și accesorii.">
+  <%- include("../fragmente/head.ejs") %>
+</head>
+
+<body>
+  <%- include("../fragmente/header.ejs") %>
+  <main>
+    <section id="Chitare">
+      <h4>Chitare Acoustice</h4>
+      <h4>Ibanez PF1512-NT</h4>
+      <div class="produs-container">
+        <h5>Harta Interactivă a Chitarelor</h5>
+        <img src="resurse/imagini/chitara.jpg" usemap="#chitara-map" alt="Chitara Ibanez PF1512-NT" width="400" height="400" />
+        <map name="chitara-map">
+          <area shape="rect" coords="50,10,150,90" href="https://www.ibanez.com" alt="Cap chitara" title="Vezi detalii despre capul chitarei" />
+          <area shape="rect" coords="150,100,300,300" href="https://www.ibanez.com" alt="Corp chitara" title="Vezi detalii despre corpul chitarei" />
+        </map>
+      </div>
+      <div class="container-iframe">
+        <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/p_bWovIrxBk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="taburi-iframe">
+        <a href="https://www.youtube.com/embed/p_bWovIrxBk" target="ifr-video">Acordare chitara</a>
+        <a href="https://www.youtube.com/embed/BJHR3EP8OJc" target="ifr-video">Review</a>
+        <a href="https://www.youtube.com/embed/hM-fpyJtwco" target="ifr-video">Pareri chitara</a><br />
+      </div>
+      <div class="produs-container">
+        <p></p>
+        <h5>Ibanez EH10</h5>
+        <figure>
+          <picture>
+            <source srcset="resurse/imagini/chitara_acoustica2.jpg" media="(min-width: 1024px)" height="400" width="400" />
+            <source srcset="resurse/imagini/chitara_acoustica2.jpg" media="(min-width: 600px)" height="400" width="400" />
+            <img src="./resurse/imagini/chitara_acoustica2.jpg" alt="Chitara Acustica2" height="400" width="400" />
+          </picture>
+        </figure>
+      </div>
+      <div class="chitara_video">
+        <video controls style="width:40%;height:auto" poster="/resurse/imagini/Ibanez_EH10.jpg">
+          <source src="resurse/video/Ibanez_EH10.mp4" type="video/mp4">
+          <source src="resurse/video/Ibanez_EH10.ogv" type="video/ogv">
+          <!--<track  src="data:image/png;base64, V0VCVlRUIC0gU29tZSB0aXRsZQoKMDA6MDAuMDAwIC0tPiAwMDowMy4wMDAKbyBzxIMgcHJpbmQgbXVsyJtpIMiZb2FyZWNpIS4uLi4uCgowMDowMy4wMDAgLS0+IDAwOjA3LjAwMAp1bmRlIHBsZWNhdGksIG3Eg8SDxIPEg8SDxIM/IS4uLi4KCjAwOjA5LjAwMCAtLT4gMDA6MTQuMDAwCkNoacibISBDaGnImyEgQ2hpyJshIENoacibISAKCjAwOjE0LjUwMCAtLT4gMDA6MTkuMDAwCk1pYXUhIERlemFtxINnaXJlLi4uLgoK" kind="captions" srclang="ro" label="romana" />-->
+
+          <track default src="resurse/video/tracks/captions_pt_chitara.vtt" kind="captions" srclang="ro" label="romană" />
+
+          <track src="resurse/video/tracks/captions_pt_chitara_en.vtt" kind="captions" srclang="en" label="engleză" />
+      </div>
+      <section id="infoProduse">
+        <h2>Informatii Produse</h2>
+        <h3>Informatii Chitara</h3>
+        <h4>Informatii de la producator</h4>
+        <a href="./resurse/Safety_precautions_EN.pdf" download="siteul-oficial-Ibanez.pdf">Aici puteti descarca tot ce trebuie sa stiti despre folosirea in
+          siguranta</a>
+        <p>Previzualizare PDF</p>
+        <embed src="./resurse/Safety_precautions_EN.pdf" type="application/pdf" width="1000" height="600" />
+      </section>
+    </section>
+  </main>
+  <%- include("../fragmente/footer.ejs") %>
+</body>
+
+</html>

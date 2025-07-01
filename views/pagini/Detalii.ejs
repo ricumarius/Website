@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <title>LOUD MUSIC</title>
+  <meta name="keywords" content="<b>Instrumente Muzicale</b>, <b>Chitara</b>, <b>Boxe</b>, <b>Microfon</b>, <b>Tobe</b>, <b>Pian</b>, <b>Monitoare de Studio</b>, <b>Reparații</b>, <b>Sintetizator</b>, <b>Reduceri</b>">
+  <meta name="description" content="<b>Magazin de instrumente muzicale</b> și accesorii.">
+  <%- include("../fragmente/head.ejs") %>
+</head>
+
+<body>
+  <%- include("../fragmente/header.ejs") %>
+  <main>
+    <section id="Chitara_Acoustica">
+      <h4>Chitara Acustica</h4>
+      <figure>
+        <picture>
+          <source srcset="resurse/imagini/chitara.jpg" media="(min-width: 1024px)" height="400" width="400" />
+          <source srcset="resurse/imagini/chitara.jpg" media="(min-width: 600px)" height="400" width="400" />
+          <img src="./resurse/imagini/chitara.jpg" alt="Chitara Acustica Ibanez PF1512-NT" height="400" width="400" />
+        </picture>
+        <figcaption>
+          <strong><b>Chitara Acustica Ibanez PF1512-NT</b></strong><br />
+          Preț vechi: <s>1200 RON</s><br />
+          Preț nou: <ins>1050 RON</ins><br />
+          La achizitia a doua chitare dispuneti de o reducere, cum se
+          calculeaza:<br />
+          <div class="formula-container">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mrow>
+                <mi class="highlight-formula">Suma Produse</mi>
+                <mo>=</mo>
+                <mrow>
+                  <mi class="formula-scris">Pret chitara 1</mi>
+                  <mo class="formula-scris">+</mo>
+                  <mrow>
+                    <mi class="formula-scris">Pret Chitara 2</mi>
+                  </mrow>
+                </mrow>
+              </mrow>
+            </math>
+            <br />
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mrow>
+                <mi class="highlight-formula">Preț final</mi>
+                <mo>=</mo>
+                <mrow>
+                  <mi>Sumă Produse</mi>
+                  <mo>-</mo>
+                  <mrow>
+                    <mi>Sumă Produse</mi>
+                    <mo>*</mo>
+                    <mn>15</mn>
+                    <mo>%</mo>
+                  </mrow>
+                </mrow>
+              </mrow>
+            </math>
+          </div>
+          <div class="descriere-produs">
+            <details>
+              <summary>Descriere</summary>
+              <p>
+                Forma: <i>Dreadnought</i><br />
+                Numar corzi: <i>12</i> pentru mai multe detalii, puteti
+                vizualiza
+                <a href="https://www.ibanez.com/eu/products/detail/pf1512_1p_09" target="_blank">site-ul oficial Ibanez</a>.<br />
+              </p>
+              <details>
+                <summary>Care este garantia produselor?</summary>
+                <p>
+                  Toate produsele beneficiaza de o garantie de 24 de luni
+                  conform legislatiei in vigoare.
+                </p>
+              </details>
+              <details>
+                <summary>Oferiti transport gratuit?</summary>
+                <p>
+                  Da, transportul este gratuit pentru comenzile de peste 300
+                  de lei.
+                </p>
+              </details>
+            </details>
+          </div>
+        </figcaption>
+      </figure>
+    </section>
+    <p></p>
+    <section id="Chitara_Electrica">
+      <h4>Chitara Electrica</h4>
+      <figure>
+        <picture>
+          <source srcset="resurse/imagini/chitara_electrica.jpg" media="(min-width: 1024px)" height="400" width="400" />
+          <source srcset="resurse/imagini/chitara_electrica.jpg" media="(min-width: 600px)" height="400" width="400" />
+          <img src="./resurse/imagini/chitara_electrica.jpg" alt="Chitara Electrica Ibanez EH10-TGM Premium Erick Hansel" height="400" width="400" />
+        </picture>
+        <figcaption>
+          <strong><b>Chitara Electrica Ibanez EH10-TGM Premium Erick Hansel</b></strong><br />
+          Preț vechi: <s>6500 RON</s><br />
+          Preț nou: <ins>5700 RON</ins><br />
+
+          <div class="descriere-produs">
+            <details>
+              <summary>Descriere</summary>
+              <p>
+                Forma: <i>AZ</i><br />
+                Numar corzi: <i>6</i> pentru mai multe detalii, puteti
+                vizualiza
+                <a href="https://www.ibanez.com/eu/products/detail/az2204b_00_02.html" target="_blank">site-ul oficial Ibanez</a>.<br />
+              </p>
+              <details>
+                <summary>Care este garantia produselor?</summary>
+                <p>
+                  Toate produsele beneficiaza de o garantie de 24 de luni
+                  conform legislatiei in vigoare.
+                </p>
+              </details>
+              <details>
+                <summary>Oferiti transport gratuit?</summary>
+                <p>
+                  Da, transportul este gratuit pentru comenzile de peste 300
+                  de lei.
+                </p>
+              </details>
+            </details>
+          </div>
+        </figcaption>
+      </figure>
+    </section>
+  </main>
+  <%- include("../fragmente/footer.ejs") %>
+</body>
+
+</html>

@@ -1,250 +1,520 @@
 <!DOCTYPE html>
 <html lang="ro">
-    <head>
-        <title>LOUD MUSIC</title>
-        <meta name="keywords" content="<b>Instrumente Muzicale</b>, <b>Chitara</b>, <b>Boxe</b>, <b>Microfon</b>, <b>Tobe</b>, <b>Pian</b>, <b>Monitoare de Studio</b>, <b>Reparații</b>, <b>Sintetizator</b>, <b>Reduceri</b>">
-        <meta name="description" content="<b>Magazin de instrumente muzicale</b> și accesorii.">
-        
-        
-      <%- include("../fragmente/head.ejs") %>
-    </head>
-    <body>
-        <%- include("../fragmente/header.ejs") %>
-          
 
-        <main>
-          <!--Zona 1-->
-          <p id="watermark"></p>
-          <div class="subzona">
-          <div id="grid-pagina">
-            <section id="welcome">
-                <h1 style="font-size: 60px; text-align: center; color: #00B4D8;">BUN VENIT</h1>
-                <p id="scris">LOUD MUSIC SRL a fost fondată cu scopul de a aduce instrumente muzicale de calitate mai aproape de pasionații de muzică din România. Cu o echipă formată din muzicieni dedicați, ne străduim să oferim produse de top, servicii profesioniste și sfaturi bazate pe experiența reală.</p>
+<head>
+  <title>LOUD MUSIC</title>
+  <meta name="keywords" content="<b>Instrumente Muzicale</b>, <b>Chitara</b>, <b>Boxe</b>, <b>Microfon</b>, <b>Tobe</b>, <b>Pian</b>, <b>Monitoare de Studio</b>, <b>Reparații</b>, <b>Sintetizator</b>, <b>Reduceri</b>">
+  <meta name="description" content="<b>Magazin de instrumente muzicale</b> și accesorii.">
+  <%- include("../fragmente/head.ejs") %>
+</head>
+
+<body>
+  <%- include("../fragmente/header.ejs") %>
+  <main>
+    <!--Zona 1-->
+    <!-- Exemplu simplu HTML pentru radio butoane -->
+
+
+
+    <p id="watermark"></p>
+    <div class="subzona">
+      <div id="grid-pagina">
+        <section id="welcome">
+          <h1 style="font-size: 60px; text-align: center; color: #00B4D8;">BUN VENIT</h1>
+          <p id="scris">LOUD MUSIC SRL a fost fondată cu scopul de a aduce instrumente muzicale de calitate mai aproape de pasionații de muzică din România. Cu o echipă formată din muzicieni dedicați, ne străduim să oferim produse de top, servicii profesioniste și sfaturi bazate pe experiența reală.</p>
+
+          <h2>De ce să alegi LOUD MUSIC?</h2>
+          <ul>
+            <li>Garanțăm produse originale de la branduri renumite precum <i>Korg</i>, <i>Vox</i>, <i>Ibanez</i>, <i>Tama</i> și multe altele.</li>
+            <li>Suntem o echipă de muzicieni pasionați, gata să te ajute cu sfaturi personalizate.</li>
+            <li>Avem 1 magazin fizic și o rețea națională de distribuitori.</li>
+            <li>Ne implicăm activ în comunitatea muzicală, sprijinind evenimente și artiști locali.</li>
+          </ul>
+          <h2>Viziunea noastră</h2>
+          <p>Ne propunem să fim mai mult decât un simplu magazin de instrumente muzicale. LOUD MUSIC este o comunitate în care artiștii și pasionații de muzică se pot conecta, evolua și inspira reciproc.</p>
+          <!--<h2 class="scris_oglinda" data-text="Chitara cu efect duotone">Chitara cu efect duotone</h2>
                 
-                <h2>De ce să alegi LOUD MUSIC?</h2>
-                <ul>
-                    <li>Garanțăm produse originale de la branduri renumite precum <i>Korg</i>, <i>Vox</i>, <i>Ibanez</i>, <i>Tama</i> și multe altele.</li>
-                    <li>Suntem o echipă de muzicieni pasionați, gata să te ajute cu sfaturi personalizate.</li>
-                    <li>Avem 1 magazin fizic și o rețea națională de distribuitori.</li>
-                    <li>Ne implicăm activ în comunitatea muzicală, sprijinind evenimente și artiști locali.</li>
-                </ul>
-                <h2>Viziunea noastră</h2>
-                <p>Ne propunem să fim mai mult decât un simplu magazin de instrumente muzicale. LOUD MUSIC este o comunitate în care artiștii și pasionații de muzică se pot conecta, evolua și inspira reciproc.</p>
-            </section>
-            <section id="calendar-evenimente">
-            <h2>Calendar Evenimente</h2>
-            <p><em>În curând vom adăuga evenimente muzicale și oferte speciale! Rămâi aproape!</em></p>
-            <div class="calendar-placeholder">
-                <p>Momentan, nu sunt evenimente disponibile.</p>
+                -->
+          <div id="container-text">
+            <div id="text">
+              Chitara
+              <div id="text-reflectat">
+                Chitara
+                <!-- poate fi setat prin Java Script sa fie acelasi text -->
+              </div>
             </div>
+          </div>
+          <p></p>
+          <div class="chitara_efect">
+            <img src="/resurse/imagini/chitara_background.webp" alt="Chitara background">
+          </div>
         </section>
-            <section id="tabel-container">
+        <section id="calendar-evenimente">
+          <h2>Calendar Evenimente</h2>
+          <p><em>În curând vom adăuga evenimente muzicale și oferte speciale! Rămâi aproape!</em></p>
+          <div class="calendar-placeholder">
+            <p>Momentan, nu sunt evenimente disponibile.</p>
+          </div>
+        </section>
+        <div id="tabel-container">
+          <div class="scroll-orizontal">
             <table>
-                <caption>Listă produse și disponibilitate</caption>
-                <thead>
-                    <tr>
-                        <th>Produs</th>
-                        <th>Marca</th>
-                        <th>Preț (RON)</th>
-                        <th>Disponibilitate</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Chitară Acustică</td>
-                        <td>Yamaha</td>
-                        <td>1.200</td>
-                        <td rowspan="2">În stoc</td> 
-                    </tr>
-                    <tr>
-                        <td>Tobă Electronică</td>
-                        <td>Roland</td>
-                        <td>4.500</td>
-                    </tr>
-                    <tr>
-                        <td>Microfon Condenser</td>
-                        <td>Shure</td>
-                        <td colspan="2">900 (promoție limitată!)</td> 
-                    </tr>
-                    <tr>
-                        <td>Boxă Monitor</td>
-                        <td>KRK</td>
-                        <td>2.000</td>
-                        <td>În stoc</td>
-                    </tr>
-                    <tr>
-                        <td>Sintetizator</td>
-                        <td>Korg</td>
-                        <td>3.800</td>
-                        <td>Stoc limitat</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="4">Total produse: 5</td>
-                    </tr>
-                </tfoot>
+              <caption>Listă produse și disponibilitate</caption>
+              <thead>
+                <tr>
+                  <th>Produs</th>
+                  <th>Marca</th>
+                  <th>Preț (RON)</th>
+                  <th>Disponibilitate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Chitară Acustică</td>
+                  <td>Yamaha</td>
+                  <td>1.200</td>
+                  <td rowspan="2">În stoc</td>
+                </tr>
+                <tr>
+                  <td>Tobă Electronică</td>
+                  <td>Roland</td>
+                  <td>4.500</td>
+                </tr>
+                <tr>
+                  <td>Microfon Condenser</td>
+                  <td>Shure</td>
+                  <td colspan="2">900 (promoție limitată!)</td>
+                </tr>
+                <tr>
+                  <td>Boxă Monitor</td>
+                  <td>KRK</td>
+                  <td>2.000</td>
+                  <td>În stoc</td>
+                </tr>
+                <tr>
+                  <td>Sintetizator</td>
+                  <td>Korg</td>
+                  <td>3.800</td>
+                  <td>Stoc limitat</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4">Total produse: 5</td>
+                </tr>
+              </tfoot>
             </table>
-            </section>
+          </div>
+        </div>
+        </section>
         <section id="anunturi">
           <h2>Anunțuri</h2>
           <p><em>Aici vor apărea cele mai recente știri, promoții și anunțuri speciale!</em></p>
           <div class="anunturi-placeholder">
-              <p>Magazinul intra in renovari in perioada 27-30.03.2025.</p>
-              <p>Stoc limitat la chitarele electrice!</p>
-              <p>Posibilitatea de precomandă</p>
+            <p>Magazinul intra in renovari in perioada 27-30.03.2025.</p>
+            <p>Stoc limitat la chitarele electrice!</p>
+            <p>Posibilitatea de precomandă</p>
           </div>
         </section>
-      <section id="utilizari-online">
-        <h2>Utilizatori Online</h2>
-        <div class="lista-utilizatori">
+        <section id="utilizari-online">
+          <h2>Utilizatori Online</h2>
+          <div class="lista-utilizatori">
             <div class="utilizator">
-                <span><strong>Alex</strong></span>
+              <span><strong>Alex</strong></span>
             </div>
             <div class="utilizator">
-                <span><strong>Maria</strong></span>
+              <span><strong>Maria</strong></span>
             </div>
             <div class="utilizator">
-                <span><strong>Andrei</strong></span>
+              <span><strong>Andrei</strong></span>
             </div>
             <div class="utilizator">
               <span><strong>Dorian</strong></span>
-          </div>
-          <div class="utilizator">
+            </div>
+            <div class="utilizator">
               <span><strong>Alexandra</strong></span>
-          </div>
-          <div class="utilizator">
+            </div>
+            <div class="utilizator">
               <span><strong>Ana</strong></span>
+            </div>
+            <div class="utilizator">
+              <span><strong>Darius</strong></span>
+            </div>
+            <div class="utilizator">
+              <span><strong>Dana</strong></span>
+            </div>
+            <div class="utilizator">
+              <span><strong>Edi</strong></span>
+            </div>
+            <div class="utilizator">
+              <span><strong>Ion</strong></span>
+            </div>
           </div>
-          <div class="utilizator">
-            <span><strong>Darius</strong></span>
-        </div>
-        <div class="utilizator">
-            <span><strong>Dana</strong></span>
-        </div>
-        <div class="utilizator">
-            <span><strong>Edi</strong></span>
-        </div>
-        <div class="utilizator">
-          <span><strong>Ion</strong></span>
-      </div>
-        </div>
-    </section>
-    <!--Zona 6-->
-   
+        </section>
+        <!--Zona 6-->
         <section id="utilizator-statistica">
-      <h2>Date Utilizator și Statistici</h2>
-      <div class="utilizator-info">
-        <p><b>Ip: </b><%- locals.ip %></p>
-          <h3>Utilizator 1: Ion Popescu</h3>
-          <div class="utilizator-detalii">
+          <h2>Date Utilizator și Statistici<b> Ip: </b><%- locals.ip %></h2>
+          <div class="utilizator-info">
+            <h3>Utilizator 1: Ion Popescu</h3>
+            <div class="utilizator-detalii">
               <p><strong>Email:</strong> ion.popescu@gmail.com</p>
               <p><strong>Data înregistrării:</strong> 15 martie 2025</p>
-          </div>
-          <div class="utilizator-stats">
+            </div>
+            <div class="utilizator-stats">
               <p><strong>Vizualizări pagină:</strong> 120</p>
               <p><strong>Prduse cumparate:</strong> 3</p>
               <p><strong>Comentarii trimise:</strong> 5</p>
+            </div>
           </div>
-      </div>
-  
- 
-      <div class="utilizator-info">
-          <h3>Utilizator 2: Maria Ionescu</h3>
-          <div class="utilizator-detalii">
+
+
+          <div class="utilizator-info">
+            <h3>Utilizator 2: Maria Ionescu</h3>
+            <div class="utilizator-detalii">
               <p><strong>Email:</strong> maria.ionescu@gmail.com</p>
               <p><strong>Data înregistrării:</strong> 12 martie 2025</p>
-          </div>
-          <div class="utilizator-stats">
+            </div>
+            <div class="utilizator-stats">
               <p><strong>Vizualizări pagină:</strong> 200</p>
               <p><strong>Produse cumparate:</strong> 12</p>
               <p><strong>Comentarii trimise:</strong> 2</p>
+            </div>
           </div>
+
+
+        </section>
+        <!--Zona 7-->
+
+        <section id="site-server-info">
+          <h2>Date despre Site și Server</h2>
+          <p><em>Informațiile despre site și server sunt actualizate periodic pentru a vă oferi transparență maximă.</em></p>
+
+          <div class="site-detalii">
+            <h3>Informații despre Site</h3>
+            <div class="site-data">
+              <p><strong>URL:</strong> www.loudmusic.com</p>
+              <p><strong>Versiune Site:</strong> 1.2.0</p>
+              <p><strong>Data lansării:</strong> 11 Martie 2025</p>
+              <p><strong>Tehnologii utilizate:</strong> HTML, CSS</p>
+            </div>
+          </div>
+          <div class="site-server-placeholder">
+            <p>Momentan, nu sunt disponibile date suplimentare.</p>
+          </div>
+        </section>
       </div>
-  
-    
-  </section>
-  <!--Zona 7-->
-  
-  <section id="site-server-info">
-    <h2>Date despre Site și Server</h2>
-    <p><em>Informațiile despre site și server sunt actualizate periodic pentru a vă oferi transparență maximă.</em></p>
-    
-    <div class="site-detalii">
-        <h3>Informații despre Site</h3>
-        <div class="site-data">
-            <p><strong>URL:</strong> www.loudmusic.com</p>
-            <p><strong>Versiune Site:</strong> 1.2.0</p>
-            <p><strong>Data lansării:</strong> 11 Martie 2025</p>
-            <p><strong>Tehnologii utilizate:</strong> HTML, CSS</p>
+    </div>
+    <!--Zona 8-->
+    <section id="continut-extra">
+
+
+      <section id="zona-extra">
+        <h2>Conținut Suplimentar</h2>
+        <p><em>În această zonă găsiți informații utile, recomandări și resurse pentru iubitorii de muzică.</em></p>
+        <div class="image-gallery">
+          <h3>Instrumente Muzicale Populare</h3>
+          <div class="gallery-images">
+            <img src="/resurse/imagini/chitara_electrica.jpg" alt="Chitară electrică">
+            <img src="/resurse/imagini/tobe.jpg" alt="Tobe">
+            <img src="/resurse/imagini/pian.jpg" alt="Pian digital">
+          </div>
         </div>
-    </div>
-    <div class="site-server-placeholder">
-        <p>Momentan, nu sunt disponibile date suplimentare.</p>
-    </div>
-</section></div></div>
-<!--Zona 8-->
-<section id="continut-extra">
-    <section id="zona-extra"><h2>Conținut Suplimentar</h2>
-  <p><em>În această zonă găsiți informații utile, recomandări și resurse pentru iubitorii de muzică.</em></p>
-  <div class="image-gallery">
-      <h3>Instrumente Muzicale Populare</h3>
-      <div class="gallery-images">
-          <img src="/resurse/imagini/chitara_electrica.jpg" alt="Chitară electrică">
-          <img src="/resurse/imagini/tobe.jpg" alt="Tobe">
-          <img src="/resurse/imagini/pian.jpg" alt="Pian digital">
+      </section>
+      <div class="citat">
+        <blockquote>
+          <p class="citat-text"><q>Muzica este limba universală a omenirii.</q> - Henry Wadsworth Longfellow</p>
+        </blockquote>
       </div>
-  </div></section>
-  <div class="citat">
-      <blockquote>
-          <p><q>Muzica este limba universală a omenirii.</q> - Henry Wadsworth Longfellow</p>
-      </blockquote>
-  </div>
-  <div class="link-uri">
-      <h3>Linkuri Utile</h3>
-      <ul>
+      <div class="link-uri">
+        <h3>Linkuri Utile</h3>
+        <ul>
           <li><a href="https://www.youtube.com/watch?v=jQgXtt76k70&pp=ygUoQ3VtIHPEgyDDrm52ZcibaSBzxIMgY8OibsibaSBsYSBjaGl0YXLEgw%3D%3D">Cum să înveți să cânți la chitară</a></li>
           <li><a href="https://www.youtube.com/watch?v=maBKj9mLSfk&pp=ygUvVG9wIDEwIGluc3RydW1lbnRlIG11emljYWxlIHBlbnRydSDDrm5jZXDEg3Rvcmk%3D">Top 10 cele mai ciudate instrumente muzicale</a></li>
           <li><a href="https://www.youtube.com/watch?v=5VkZqEHS-nk&t=548s&pp=ygUlUmVjZW56aWkgyJlpIHJlY29tYW5kxINyaSBwZW50cnUgdG9iZQ%3D%3D">Recenzii și recomandări pentru tobe</a></li>
-      </ul>
-  </div>
-  <section id="stiri">
-      <h3>Știri Muzicale</h3>
-      <p><strong>Lansare produs nou:</strong> Chitară electrică model 2025 - Înscrie-te pentru precomandă!</p>
-  </section>
-  <div class="feedback">
-      <h3>Feedback și Recomandări <i class="fa-solid fa-thumbs-up fa-fade" style="color: #FFD43B;"></i></h3>
-      <p>Împărtășește-ne experiența ta cu produsele noastre! Ce instrumente ai dori să adăugăm în magazinul nostru?</p>
-      <form>
-          <textarea placeholder="Scrie aici recomandările tale..."></textarea>
-          <button type="submit">Trimite</button>
-      </form>
-  </div>
-</section></div></div>
-    <section id="paragraf-jos">
-    <p id="end">Un paragraf de final.</p>
-    <p id="end">The end.</p>
-    <p id="absolut"></p></section>
-    <section id="galerie-statica">
-        <h2>Galerie</h2>
-        <div id="grid-galerie">
-            <% for (let imag of locals.imagini) { %>
-                <figure>
-                    <picture>
-                        <source srcset="<%- imag.fisier_mediu %>" media="screen and (max-width:1000px)" />
-                        <img src="<%- imag.fisier %>" alt="chitara">
-                    </picture>
-                    <figcaption class="descriere-chitare">
-                        <strong><%- imag.titlu %></strong> - <%- imag.descriere %><br>
-                        <span><%- imag.licenta %>  <%- imag.autor %> <%- imag.sursa %></span>
-                    </figcaption>
-                </figure>
-            <% } %>
+        </ul>
+      </div>
+      <section id="stiri">
+        <h3>Știri Muzicale</h3>
+        <p><strong>Lansare produs nou:</strong> Chitară electrică model 2025 - Înscrie-te pentru precomandă!</p>
+        <p>Festivaluri de muzică în această vară, reduceri la instrumente, interviuri exclusive cu artiști locali și multe altele în curând!</p>
+        <p>Abonează-te la newsletter pentru a fi la curent cu toate noutățile din lumea muzicii.</p>
+        <p>Top 10 chitariști ai momentului și piesele care au cucerit internetul.</p>
+        <p>Workshop-uri live cu artiști din întreaga lume — înregistrează-te acum gratuit!</p>
+        <p>Trupe underground în ascensiune — descoperă muzica lor înainte să devină mainstream.</p>
+      </section>
+      <section id="new-products-section">
+        <h2 style="color: red;">Produse noi</h2>
+        <ul id="new-products-list"></ul>
+      </section>
+
+      <section id="all-products-section">
+        <h2>Toate produsele</h2>
+        <ul id="all-products-list"></ul>
+      </section>
+
+
+
+      <div class="feedback">
+        <div class="continut-feedback">
+          <h3 style="color: white;">Feedback și Recomandări <i class="fa-solid fa-thumbs-up fa-fade" style="color: #FFD43B;"></i></h3>
+          <p>Împărtășește-ne experiența ta cu produsele noastre! Ce instrumente ai dori să adăugăm în magazinul nostru?</p>
+          <form>
+            <textarea placeholder="Scrie aici recomandările tale..."></textarea>
+            <button type="submit">Trimite</button>
+          </form>
         </div>
+      </div>
     </section>
+    <section id="tabel-produse-transpus">
+      <div class="tabel-produse-scroll">
+        <table class="tabel-produse">
+          <!-- <caption>Listă produse și disponibilitate (Transpus)</caption> -->
+          <thead>
+            <tr style="color: #03045E;">
+              <th>Caracteristici</th>
+              <th>Produs 1</th>
+              <th>Produs 2</th>
+              <th>Produs 3</th>
+              <th>Produs 4</th>
+              <th>Produs 5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Produs</td>
+              <td>Chitară Acustică</td>
+              <td>Tobă Electronică</td>
+              <td>Microfon Condenser</td>
+              <td>Boxă Monitor</td>
+              <td>Sintetizator</td>
+            </tr>
+            <tr>
+              <td>Marca</td>
+              <td>Yamaha</td>
+              <td>Roland</td>
+              <td>Shure</td>
+              <td>KRK</td>
+              <td>Korg</td>
+            </tr>
+            <tr>
+              <td>Preț (RON)</td>
+              <td>1.200</td>
+              <td>4.500</td>
+              <td>900</td>
+              <td>2.000</td>
+              <td>3.800</td>
+            </tr>
+            <tr>
+              <td>Disponibilitate</td>
+              <td>În stoc</td>
+              <td>În stoc</td>
+              <td>Promoție</td>
+              <td>În stoc</td>
+              <td>Stoc limitat</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="6">Total produse: 5</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section class="tabel-produse-transpus">
+      <table class="tabel-custom">
+        <caption>Instrumente Muzicale - Detalii</caption>
+        <thead>
+          <tr>
+            <th>Produs</th>
+            <th>Marcă</th>
+            <th>Preț (RON)</th>
+            <th>Stoc</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Produs">Chitara</td>
+            <td data-label="Marcă">Ibanez</td>
+            <td data-label="Preț (RON)">350</td>
+            <td data-label="Stoc">În stoc</td>
+          </tr>
+          <tr>
+            <td data-label="Produs">Clape MIDI</td>
+            <td data-label="Marcă">Akai</td>
+            <td data-label="Preț (RON)">500</td>
+            <td data-label="Stoc">Stoc limitat</td>
+          </tr>
+          <tr>
+            <td data-label="Produs">Amplificator Sunet</td>
+            <td data-label="Marcă">Beats</td>
+            <td data-label="Preț (RON)">5700</td>
+            <td data-label="Stoc">În stoc</td>
+          </tr>
+          <tr>
+            <td data-label="Produs">Casti</td>
+            <td data-label="Marcă">Audiotechnica</td>
+            <td data-label="Preț (RON)">5000</td>
+            <td data-label="Stoc">Stoc epuizat</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="paragraf-jos">
+      <p id="end">Un paragraf de final.</p>
+      <p id="end">The end.</p>
+      <p id="absolut"></p>
+    </section>
+    <hr class="linie-dubla" />
+
+    <section id="galerie-statica">
+      <h2>Galerie</h2>
+      <div id="grid-galerie">
+        <% for (let imag of locals.imagini) { %>
+        <figure>
+          <picture>
+            <source srcset="<%- imag.fisier_mediu %>" media="screen and (max-width:1000px)" />
+            <img src="<%- imag.fisier %>" alt="chitara">
+          </picture>
+          <figcaption class="descriere-chitare">
+            <strong><%- imag.titlu %></strong> - <%- imag.descriere %><br>
+            <span><%- imag.licenta %> <%- imag.autor %> <%- imag.sursa %></span>
+          </figcaption>
+        </figure>
+        <% } %>
+      </div>
+    </section>
+    <div class="video-background">
+      <video autoplay muted loop playsinline>
+        <source src="/resurse/Ibanez_EH10.mp4" type="video/mp4">
+      </video>
+      <div class="continut-peste-video">
+        <h1 style="color: white;">Exemplu de video in fundal</h1>
+      </div>
+    </div>
+    <div class="galerie-totala">
+    <!-- <h2>Galerie animata (<%= nrPoze %> imagini)</h2> -->
+
+    <section class="galerie">
+      <div class="gallery-single">
+        <img id="imagine-galerie" src="<%= galerie[0].fisier %>" alt="<%= galerie[0].titlu %>">
+        <div class="caption">
+          <h3 id="titlu-galerie"><%= galerie[0].titlu %></h3>
+          <p id="descriere-galerie"><%= galerie[0].descriere %></p>
+        </div>
+      </div>
+    </section></div>
+
+  </main>
+  <%- include("../fragmente/footer.ejs") %>
+</body>
+<script>
+  // Setam T in zile
+  const T = 30;
     
+  // Data curenta
+  const now = new Date();
     
-        </main>
-        <%- include("../fragmente/footer.ejs") %>
-    </body>
+  // Lista de produse (exemplu) cu poze
+  const products = [
+    { id: 1, name: 'Ibanez AZ2204NW-MGR', addedDate: '2025-05-01', image: '/resurse/imagini/galerie/chitara1.png' },
+    { id: 2, name: 'Ibanez AZ47P1QM-DEB', addedDate: '2025-04-15', image: '/resurse/imagini/galerie/chitara2.png' },
+    { id: 3, name: 'Ibanez AZ2402-GRM', addedDate: '2025-05-20', image: '/resurse/imagini/galerie/chitara3.png' },
+    { id: 4, name: 'Ibanez AZ2204NWL-MGR', addedDate: '2025-03-10', image: '/resurse/imagini/galerie/chitara4.png' },
+    { id: 5, name: 'Ibanez GRGM21M-BLT', addedDate: '2025-05-25', image: '/resurse/imagini/galerie/chitara5.png' }
+  ];
+    
+  // Funcție care verifică dacă produsul este nou
+  function isNewProduct(addedDate) {
+    const added = new Date(addedDate);
+    const diffTime = now - added; // ms
+    const diffDays = diffTime / (2000 * 60 * 60 * 24);
+    return diffDays <= T;
+  }
+    
+  // Sortăm produsele după data adăugării, descrescător
+  const sortedProducts = [...products].sort((a, b) => new Date(b.addedDate) - new Date(a.addedDate));
+    
+  // Extragem doar produsele noi
+  const newProducts = sortedProducts.filter(p => isNewProduct(p.addedDate));
+    
+  // Referințe DOM
+  const newProductsList = document.getElementById('new-products-list');
+  const allProductsList = document.getElementById('all-products-list');
+    
+  // Construim lista de produse noi cu imagini
+  newProducts.forEach(product => {
+    const li = document.createElement('li');
+    li.className = 'product-item';
+    
+    li.innerHTML = `
+      <a href="http://localhost:8080/produs/${product.id}">
+        <img src="${product.image}" alt="${product.name}" class="product-image" />
+        <span>${product.name}</span>
+      </a>
+      <span class="badge-new">NOU</span>
+    `;
+    
+    newProductsList.appendChild(li);
+  });
+    
+  // Construim lista tuturor produselor cu badge "NOU" și imagini dacă e cazul
+  sortedProducts.forEach(product => {
+    const li = document.createElement('li');
+    li.className = 'product-item';
+    
+    li.innerHTML = `
+      <a href="/produs/${product.id}">
+        <img src="${product.image}" alt="${product.name}" class="product-image" />
+        <span>${product.name}</span>
+      </a>
+      ${isNewProduct(product.addedDate) ? '<span class="badge-new">NOU</span>' : ''}
+    `;
+    
+    allProductsList.appendChild(li);
+  });
+
+//Galerie animata  
+const imagini = <%- JSON.stringify(galerie) %>;
+let index = 0;
+      
+const imgElem = document.getElementById("imagine-galerie");
+const titluElem = document.getElementById("titlu-galerie");
+const descriereElem = document.getElementById("descriere-galerie");
+const galerieContainer = document.querySelector(".gallery-single");
+      
+function schimbaImagine(i) {
+  imgElem.style.animation = "none";
+  imgElem.offsetHeight; 
+      
+  imgElem.src = imagini[i].fisier;
+  imgElem.alt = imagini[i].titlu;
+  titluElem.textContent = imagini[i].titlu;
+  descriereElem.textContent = imagini[i].descriere;
+      
+  imgElem.style.animation = "clip-diagonal 1s ease-in-out forwards";
+}
+      
+let intervalId;
+      
+function pornesteRotatia() {
+  intervalId = setInterval(() => {
+    index = (index + 1) % imagini.length;
+    schimbaImagine(index);
+  }, 1000);
+}
+      
+function opresteRotatia() {
+  clearInterval(intervalId);
+}
+      
+schimbaImagine(index);
+pornesteRotatia();
+      
+galerieContainer.addEventListener("mouseenter", opresteRotatia);
+galerieContainer.addEventListener("mouseleave", pornesteRotatia);
+</script>
 </html>
+

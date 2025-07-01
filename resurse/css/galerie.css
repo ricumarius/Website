@@ -1,0 +1,72 @@
+.galerie {
+  width: 400px;
+  margin: 30px auto;
+  border: 15px solid transparent;
+  border-image: url('/resurse/imagini/border.png') 30 round;
+  background-color: rgb(255, 255, 255);
+}
+
+.gallery-single {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  animation-name: clip-diagonal;
+  box-shadow: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.gallery-single img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  animation-fill-mode: forwards;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-name: clip-diagonal;
+  animation-play-state: running;
+  transition: filter 0.5s ease, transform 0.5s ease;
+  will-change: clip-path, opacity, transform;
+  filter: grayscale(100%) blur(2px); /* efect gri + blur aplicat implicit */
+}
+
+.gallery-single:hover img {
+  filter: grayscale(0%) blur(0) brightness(0.85); /* revine la culoare + claritate */
+  animation-play-state: paused !important;
+  transform: scale(1.05);
+}
+
+.gallery-single:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.5s ease;
+  max-width: 90%;
+  pointer-events: none; /* să nu blocheze hover */
+}
+
+.gallery-single:hover .caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes clip-diagonal {
+  0% {
+    clip-path: polygon(100% 0%, 100% 0%, 0% 100%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}

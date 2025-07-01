@@ -38,3 +38,15 @@ ul.meniu {
         width: calc(50% - var(--spatiu-mic));
     }
 }
+
+#gr {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#stiri {
+    column-count: 2;
+}
+
+#grid-pagina {
+    grid-template-areas: "prezentare" "calendar" "tabel" "anunturi" "utilizatori" "statistica" "server" "diverse";
+}

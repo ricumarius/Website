@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <title>LOUD MUSIC</title>
+  <meta name="keywords" content="<b>Instrumente Muzicale</b>, <b>Chitara</b>, <b>Boxe</b>, <b>Microfon</b>, <b>Tobe</b>, <b>Pian</b>, <b>Monitoare de Studio</b>, <b>Reparații</b>, <b>Sintetizator</b>, <b>Reduceri</b>">
+  <meta name="description" content="<b>Magazin de instrumente muzicale</b> și accesorii.">
+  <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+  <%- include("../fragmente/head.ejs") %>
+  <script type="text/javascript" src="/resurse/js/produse.js"></script>
+  <script type="text/javascript" src="/resurse/js/produse-cos.js"></script>
+</head>
+
+<body>
+  <%- include("../fragmente/header.ejs") %>
+  <main class="container my-4">
+    <div class="row g-3">
+      <!-- Nume -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <label for="inp-nume" class="form-label">Nume:</label>
+        <input type="text" id="inp-nume" class="form-control" list="nume-sugestii" />
+        <datalist id="nume-sugestii"></datalist>
+      </div>
+
+      <!-- Scala radio (toggle buttons) -->
+      <!-- Am mutat optiunile intr-un div gol cu id="grup-scala" -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <label class="form-label d-block mb-2">Scala:</label>
+        <div class="btn-group" role="group" aria-label="Scala" id="grup-scala"></div>
+      </div>
+
+      <!-- Pret minim -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <label for="inp-pret" class="form-label">Preț minim: <span id="infoRange">(0)</span></label>
+        <input type="range" id="inp-pret" class="form-range" value="0" min="0" max="15000" />
+      </div>
+
+      <!-- Select simplu categorie -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <label for="inp-categorie" class="form-label">Categorie:</label>
+        <select id="inp-categorie" class="form-select">
+          <option id="sel-toate" selected value="toate">toate</option>
+          <% for (let opt of locals.optiuni) { %>
+          <option value="<%- opt.unnest %>"><%- opt.unnest %></option>
+          <% } %>
+        </select>
+      </div>
+
+      <!-- Select multiplu categorii (checkbox) -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <fieldset>
+          <legend class="form-label">Select multiplu categorii:</legend>
+          <% for (let opt of locals.optiuni) { %>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="categorii" value="<%- opt.unnest %>" id="cat-<%- opt.unnest %>">
+            <label class="form-check-label" for="cat-<%- opt.unnest %>"><%- opt.unnest %></label>
+          </div>
+          <% } %>
+        </fieldset>
+        <div id="selected-categories" style="margin-top: 10px; color: blue; font-weight: bold;"></div>
+      </div>
+
+      <!-- Textarea cu floating label -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <label for="inp-materiale" class="form-label">Materiale (cu sugestii):</label>
+        <input type="text" id="inp-materiale" class="form-control" list="materiale-sugestii" placeholder="Ex: aur, nichel, argint" />
+        <datalist id="materiale-sugestii"></datalist>
+      </div>
+
+      <!-- Select multiplu scala -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <label for="inp-greutate" class="form-label">Greutate (select multiplu):</label>
+        <select id="inp-greutate" name="gr_rad[]" multiple size="4" class="form-select">
+          <!-- Opțiunile vor fi generate dinamic -->
+        </select>
+        <small class="form-text text-muted">Ține apăsat Ctrl pentru a selecta mai multe opțiuni.</small>
+      </div>
+
+
+      <!-- Nume cu datalist -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <label for="inp-nume-datalist" class="form-label">Nume (cu sugestii):</label>
+        <input type="text" id="inp-nume-datalist" class="form-control" list="nume-sugestii" placeholder="Ex: AZ2204NW-MGR, AZ47P1QM-DEB" />
+        <datalist id="nume-sugestii">
+          <option value="AZ2204NW-MGR">
+          <option value="AZ47P1QM-DEB">
+          <option value="AZ2402-GRM">
+          <option value="AZ2204NWL-MGR">
+          <option value="GRGM21M-BLT">
+        </datalist>
+      </div>
+
+      <p>Produse afișate: <span id="numar-produse-afisate">0</span></p>
+
+      <!-- Butoane -->
+      <div class="col-12">
+        <div class="d-flex flex-wrap gap-2">
+          <button class="btn btn-primary btn-sm d-flex align-items-center" id="filtrare">
+            <i class="bi bi-funnel-fill"></i>
+            <span class="d-none d-sm-inline ms-1">Filtrează</span>
+          </button>
+
+          <button id="resetare" class="btn btn-secondary btn-sm d-flex align-items-center">
+            <i class="bi bi-arrow-clockwise"></i>
+            <span class="d-none d-sm-inline ms-1">Resetează</span>
+          </button>
+
+          <button id="sortCrescNume" class="btn btn-primary btn-sm d-flex align-items-center">
+            <i class="bi bi-sort-alpha-down"></i>
+            <span class="d-none d-sm-inline ms-1">Sortează crescător</span>
+          </button>
+
+          <button id="sortDescrescNume" class="btn btn-primary btn-sm d-flex align-items-center">
+            <i class="bi bi-sort-alpha-down-alt"></i>
+            <span class="d-none d-sm-inline ms-1">Sortează descrescător</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <p id="p-suma">Apăsați Alt+"c" pentru suma prețurilor produselor afișate.</p>
+      </div>
+    </div>
+
+    <!-- Secțiunea produse -->
+    <section id="produse" class="mt-4">
+      <h2>Produse</h2>
+      <div class="grid-produse">
+        <% for(let prod of locals.produse) { %>
+        <article class="produs" data-id="<%- prod.id %>">
+          <h3 class="nume">Nume: <a href="/produs/<%-prod.id %>"><span class="val-nume"><%- prod.nume %></span></a></h3>
+          <div class="info-prod">
+            <p class="pret">Pret: <span class="val-pret"><%- prod.pret %></span> RON</p>
+            <p class="scala">scala: <span class="val-scala"><%- prod.scala %></span> mm</p>
+            <p class="greutate">Greutate: <span class="val-greutate"><%- prod.greutate %></span> kilograme</p>
+            <p class="materiale">Materiale:<span class="val-materiale"> <%- prod.materiale %></span></p>
+          </div>
+
+          <figure>
+            <a href="/produs/<%-prod.id %>"><img src="/resurse/imagini/produse/<%- prod.imagine %>" style="width:50%;height:auto;" alt="[imagine <%- prod.nume %>]" /></a>
+          </figure>
+          <div class="info-prod">
+            <p class="categorie">Categorie:<span class="val-categorie"> <%- prod.categorie %></span></p>
+            <p class="data_adaugare">Data:<span class="val-data_adaugare"> <%- prod.data_adaugare %></span></p>
+            <p class="deja_acordata">Acordata:<span class="val-deja_acordata"> <%- prod.deja_acordata %></span></p>
+          </div>
+          <label class="selecteaza-cos">
+            Selectează:<br />
+            <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off" />
+          </label>
+
+          <button class="btn btn-warning btn-sm btn-compara" data-id="<%- prod.id %>" data-nume="<%- prod.nume %>">compară</button>
+
+          <div class="btn-grup-prod" style="margin-top: 10px; display: flex; gap: 8px;">
+            <button type="button" class="btn btn-outline-secondary btn-sm btn-ascunde-temp" title="Ascunde temporar produsul">
+              <i class="bi bi-eye-slash-fill"></i>
+            </button>
+            <button type="button" class="btn btn-outline-danger btn-sm btn-sterge-sesiune" title="Șterge produsul pentru această sesiune">
+              <i class="bi bi-x-circle-fill"></i>
+            </button>
+          </div>
+        </article>
+        <% } %>
+      </div>
+    </section>
+
+    <p id="mesaj-filtrare" style="display:none; font-weight:bold; color:#03045E; text-align: center;">Nu există produse conform filtrării curente.</p>
+
+    <div id="paginare" class="mt-3 d-flex justify-content-center gap-2 flex-wrap"></div>
+
+  </main>
+
+  <%- include("../fragmente/footer.ejs") %>
+
+
+  <div id="tooltip" style="position: absolute; display: none; background: #333; color: white; padding: 5px; border-radius: 5px; font-size: 12px; z-index: 10000;"></div>
+
+</body>
+<script>
+  document.querySelectorAll(".btn-fixeaza").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const produs = btn.closest("article.produs");
+      if (produs) {
+        const fixat = produs.classList.toggle("fixat");
+        btn.classList.toggle("activ", fixat);
+        salveazaFixate();
+      }
+    });
+  });
+
+function salveazaFixate() {
+  const produseFixate = [];
+  document.querySelectorAll("article.produs.fixat").forEach(prod => {
+    const id = prod.getAttribute("data-id");
+    if (id) produseFixate.push(id);
+  });
+  localStorage.setItem("produseFixate", JSON.stringify(produseFixate));
+}
+
+function incarcaFixate() {
+  const produseFixate = JSON.parse(localStorage.getItem("produseFixate") || "[]");
+  produseFixate.forEach(id => {
+    const produs = document.querySelector(`article.produs[data-id="${id}"]`);
+    if (produs) {
+      produs.classList.add("fixat");
+      const btn = produs.querySelector(".btn-fixeaza");
+      if (btn) btn.classList.add("activ");
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  incarcaFixate();
+
+  // Ascunde produsele eliminate în sesiune
+  let eliminate = JSON.parse(sessionStorage.getItem("produseEliminate") || "[]");
+  eliminate.forEach(id => {
+    const produs = document.querySelector(`.select-cos[value="${id}"]`)?.closest("article.produs");
+    if (produs) {
+      produs.classList.add("eliminat-permanent");
+    }
+  });
+});
+
+
+
+
+document.querySelectorAll(".btn-ascunde-temp").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const produs = btn.closest("article.produs");
+    if (produs) {
+      produs.classList.toggle("ascuns-temporar");
+      console.log(`Produs ascuns temporar:`, produs.classList.contains("ascuns-temporar"));
+    }
+  });
+});
+
+document.querySelectorAll(".btn-sterge-sesiune").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const produs = btn.closest("article.produs");
+    if (produs) {
+      produs.classList.add("eliminat-permanent");
+      const idProdus = produs.querySelector(".select-cos")?.value;
+      if (idProdus) {
+        let eliminate = JSON.parse(sessionStorage.getItem("produseEliminate") || "[]");
+        if (!eliminate.includes(idProdus)) {
+          eliminate.push(idProdus);
+          sessionStorage.setItem("produseEliminate", JSON.stringify(eliminate));
+        }
+      }
+      console.log(`Produs eliminat permanent.`);
+    }
+  });
+});
+
+// La încărcarea paginii, ascunde produsele eliminate din sesiune
+window.addEventListener("DOMContentLoaded", () => {
+  let eliminate = JSON.parse(sessionStorage.getItem("produseEliminate") || "[]");
+  eliminate.forEach(id => {
+    const produs = document.querySelector(`.select-cos[value="${id}"]`)?.closest("article.produs");
+    if (produs) {
+      produs.classList.add("eliminat-permanent");
+    }
+  });
+});
+const tooltip = document.getElementById("tooltip");
+
+document.querySelectorAll(".btn-compara.disabled-compara").forEach(btn => {
+  btn.addEventListener("mouseenter", (e) => {
+    tooltip.textContent = "ștergeți un produs din lista de comparare";
+    tooltip.style.display = "block";
+    tooltip.style.left = e.pageX + 10 + "px";
+    tooltip.style.top = e.pageY - 40 + "px";
+  });
+  btn.addEventListener("mouseleave", () => {
+    tooltip.style.display = "none";
+  });
+});
+
+</script>
+</html>

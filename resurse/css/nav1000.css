@@ -34,3 +34,39 @@ ul.meniu li div.text-icon {
 #gr {
   grid-template-columns: repeat(2, 1fr);
 }
+
+#stiri {
+  column-count: 2;
+}
+
+#grid-pagina {
+  grid-template-areas:
+    "prezentare"
+    "calendar"
+    "tabel"
+    "anunturi"
+    "utilizatori"
+    "statistica"
+    "server"
+    "diverse";
+}
+
+#grid-galerie {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .scroll-orizontal {
+  overflow-x: auto;
+}
+
+table {
+  min-width: 700px;
+}
+.tabel-produse-scroll {
+  max-width: 100%;
+}
+
+.galerie-totala{
+  display: none;
+}

@@ -1,0 +1,132 @@
+/* .navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--culoare-primara);
+  padding: var(--spatiu-mic) 1.875rem;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 0.125rem 0.313rem rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.meniu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  margin-left: auto;
+  padding: 0;
+}
+
+.meniu a {
+  color: var(--culoare-background-baza);
+  text-decoration: none;
+  padding: var(--spatiu-mic) var(--spatiu-mediu);
+  display: block;
+  text-align: center;
+  transition: background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+.meniu a:hover {
+  background-color: var(--culoare-secundara);
+  border-radius: 0.313rem;
+}
+
+.meniu details summary {
+  color: var(--culoare-background-baza);
+  padding: var(--spatiu-mic) var(--spatiu-mediu);
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.meniu details summary:hover {
+  background-color: var(--culoare-secundara);
+  border-radius: 0.313rem;
+}
+
+.meniu details:hover {
+  display: block;
+}
+
+.meniu details:hover summary {
+  background-color: var(--culoare-secundara);
+  border-radius: 0.313rem;
+}
+
+.meniu li {
+  position: relative;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.meniu li::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: 82%;
+  height: 4px;
+  background: linear-gradient(to right, black, white, black);
+  transform: translateY(-100%) translateX(-50%);
+  transition: transform 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.meniu li:hover::after {
+  transform: translateY(0) translateX(-50%);
+  opacity: 1;
+}
+
+ul.meniu li div.imag-icon {
+  display: none;
+}
+
+ul.meniu li:hover ul {
+  display: block;
+  background-color: var(--culoare-deschisa);
+  position: relative;
+  list-style-type: none;
+  left: -1px;
+}
+
+.submeniu2 {
+  display: none;
+  position: absolute;
+  background-color: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submeniu {
+  position: relative;
+}
+
+.submeniu:hover .submeniu2 {
+  display: block;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 2.188rem;
+  margin-right: 0.5rem;
+}
+
+.brand-name {
+  color: var(--culoare-background-baza);
+  font-size: 1.125rem;
+  font-weight: bold;
+} */

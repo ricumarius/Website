@@ -1,43 +1,245 @@
 <header>
-    <nav class="nav">
-        
-      <ul class="navbar">
-        
-        <li class="logo">
-          <a href="index">
-            <img src="/resurse/ico/favicon/favicon.ico" alt="Logo">
-            <span class="brand-name">LOUD MUSIC</span>
-          </a>
-        </li>
-        
-<label for="ch-menu" id="hamburger">
-<span class="bar bar1"></span>
-<span class="bar bar2"></span>
-<span class="bar bar3"></span>
-</label>
-<input type="checkbox" id="ch-menu" hidden>
-        <ul class="meniu">
-        <li><div class="text-icon" id="acasa"><a href="index">Acasa</a></div><div class="imag-icon" id="acasa-mediu"><span class="fa-solid fa-house"></span></div>
-            <li class="submeniu">
-                <a href="#"><i class="fa-solid fa-bars"></i> Catalog</a>
-                <ul class="submeniu2">
-                  <li><a href="/chitare_acustice.html">Chitare Acoustice</a></li>
-                  <li><a href="/chitare_electrice.html">Chitare Electrice</a></li>
-                  <li><a href="/tobe_percutie.html">Tobe & Percuție</a></li>
-                </ul>
-            </li>
+  <nav class="nav">
 
-            <li class="submeniu">
-              <a href="#"><i class="fa-solid fa-bars"></i> Detalii despre noi</a>
-              <ul class="submeniu2">
-                <li><a href="/Detalii">Oferte</a></li>
-                <li><a href="/Servicii.html">Servicii</a></li>
-                <li><a href="/Contact.html">Contact & Despre noi</a></li>
-              </ul>
-            </li>
-            <li><a href="#stiri"><i class="fa-regular fa-envelope fa-beat-fade"></i> Ultimele stiri</a></li>
+    <ul class="navbar">
+
+      <li class="logo">
+        <a href="/index">
+          <img src="/resurse/ico/favicon/favicon.ico" alt="Logo">
+          <span class="brand-name">LOUD MUSIC</span>
+        </a>
+      </li>
+      <input type="checkbox" id="ch-menu" />
+      <label for="ch-menu" id="hamburger">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+      </label>
+      <ul class="meniu">
+
+        <li>
+          <div class="text-icon" id="acasa"><a href="/index">Acasa</div>
+          <div class="imag-icon" id="acasa-mediu"><span class="fa-solid fa-house"></span></a></div>
+        </li>
+        <li>
+          <div><a><i class="fa-solid fa-bars"></i> Catalog</a></div>
+          <ul>
+            <li><a href="/chitare_acustice">Acoustice</a></li>
+            <li><a href="/chitare_electrice">Electrice</a></li>
           </ul>
         </li>
+        <li>
+          <div><a href="/produse">Produse</a></div>
+          <ul>
+            <li><a href="/produse">Toate</a></li>
+            <li><a href="/produse?tip=clasica">Clasice</a></li>
+            <li><a href="/Produse?tip=acustica">Acoustice</a></li>
+            <li><a href="/Produse?tip=electrica">Electrice</a></li>
+          </ul>
+        </li>
+        <li>
+          <div>Detalii</div>
+          <ul>
+            <li><a href="/Detalii">Oferte</a></li>
+            <li><a href="/Servicii">Servicii</a></li>
+            <li><a href="/Contact">Contact</a></li>
+          </ul>
+        </li>
+        <li><a href="/index#stiri">Stiri</a></li>
+
+        <!-- <li class="submeniu">
+                <a href="#"><i class="fa-solid fa-bars"></i> Catalog</a>
+                <ul class="submeniu2">
+                  <li><a href="/chitare_acustice">Chitare Acoustice</a></li>
+                  <li><a href="/chitare_electrice">Chitare Electrice</a></li>
+                </ul>
+            </li>
+              <li class="submeniu">
+                <a href="#">Produse</a>
+                <ul class="submeniu2">
+                  <li><a href="/Produse">Toate</a></li>
+                  <li><a href="/produse?tip=clasica">Chitare Clasice</a></li>
+                  <li><a href="/Produse?tip=acustica">Chitare Acoustice</a></li>
+                  <li><a href="/Produse?tip=electrica">Chitare Electrice</a></li>
+                  
+                </ul>
+            </li>
+            <li class="submeniu">
+              <a href="#">Detalii despre noi</a>
+              <ul class="submeniu2">
+                <li><a href="/Detalii">Oferte</a></li>
+                <li><a href="/Servicii">Servicii</a></li>
+                <li><a href="/Contact">Contact & Despre noi</a></li>
+              </ul>
+            </li>
+            <li><a href="/index#stiri"><i class="fa-regular fa-envelope fa-beat-fade"></i> Ultimele stiri</a></li>
+            <button id="schimba_tema"><i class="fa-solid fa-sun icon-theme-toggle"></i>Tema</button>
+          </ul> -->
+        </li>
+
       </ul>
-    </nav>
-  </header>
+      <!-- <div class="form-check form-switch d-flex align-items-center mt-larger" style="font-size: 1.8rem;">
+        <input class="form-check-input" type="checkbox" id="schimba_tema" style="width: 3rem; height: 1.8rem;" />
+        <label class="form-check-label ms-3" for="schimba_tema">
+          <i id="icon-theme-toggle" class="fa-solid fa-sun" style="font-size: 2rem;"></i>
+        </label>
+      </div> -->
+      <div class="buton-zona">
+        <label class="buton-tema">
+          <input type="radio" name="tema" value="light" id="tema-light" />
+          Light
+        </label>
+        <label class="buton-tema">
+          <input type="radio" name="tema" value="dark" id="tema-dark" />
+          Dark
+        </label>
+        <label class="buton-tema">
+          <input type="radio" name="tema" value="red" id="tema-red" />
+          Red
+        </label>
+      </div>
+  </nav>
+  <button id="open-schedule">Vezi Orarul</button>
+
+</header>
+
+<div id="schedule-container" role="dialog" aria-modal="true" aria-labelledby="schedule-title">
+  <button id="close-schedule" aria-label="Închide orarul">X</button>
+  <h2 id="schedule-title">Orar funcționare</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Ziua</th>
+        <th>Interval orar</th>
+      </tr>
+    </thead>
+    <tbody id="schedule-body">
+    </tbody>
+  </table>
+  <div id="status"></div>
+</div>
+<script>
+// Orarul firmei (ziua, orele de deschidere - inchidere)
+// Format 24h, ore minute în format "HH:MM"
+const schedule = {
+    "Luni": [{
+      open: "08:00",
+      close: "16:00"
+    }],
+    "Marți": [{
+      open: "08:00",
+      close: "16:00"
+    }],
+    "Miercuri": [{
+      open: "08:00",
+      close: "16:00"
+    }],
+    "Joi": [{
+      open: "10:00",
+      close: "18:00"
+    }],
+    "Vineri": [{
+      open: "10:00",
+      close: "18:00"
+    }],
+    "Sâmbătă": [{
+      open: "12:00",
+      close: "16:00"
+    }],
+    "Duminică": [] // Închis
+  };
+  
+  const daysOfWeek = [, "Luni", "Marți", "Miercuri", "Joi", "Vineri", "Sâmbătă", "Duminică"];
+  
+  const scheduleContainer = document.getElementById('schedule-container');
+  const scheduleBody = document.getElementById('schedule-body');
+  const statusDiv = document.getElementById('status');
+  const openBtn = document.getElementById('open-schedule');
+  const closeBtn = document.getElementById('close-schedule');
+  
+  function parseTime(timeStr) {
+    const [h, m] = timeStr.split(':').map(Number);
+    return {
+      h,
+      m
+    };
+  }
+  
+  function isOpenNow() {
+    const now = new Date();
+    const todayName = daysOfWeek[now.getDay()];
+    const intervals = schedule[todayName];
+  
+    if (!intervals || intervals.length === 0) return false;
+  
+    for (const interval of intervals) {
+      const open = parseTime(interval.open);
+      const close = parseTime(interval.close);
+  
+      const openDate = new Date(now);
+      openDate.setHours(open.h, open.m, 0, 0);
+      const closeDate = new Date(now);
+      closeDate.setHours(close.h, close.m, 0, 0);
+  
+      if (now >= openDate && now <= closeDate) {
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  function generateScheduleTable() {
+    scheduleBody.innerHTML = ""; // golim
+  
+    const todayIndex = new Date().getDay();
+  
+    daysOfWeek.forEach((day, index) => {
+      const tr = document.createElement('tr');
+      if (index === todayIndex) {
+        tr.classList.add('today');
+      }
+  
+      const tdDay = document.createElement('td');
+      tdDay.textContent = day;
+      tr.appendChild(tdDay);
+  
+      const intervals = schedule[day];
+      const tdIntervals = document.createElement('td');
+  
+      if (!intervals || intervals.length === 0) {
+        tdIntervals.textContent = "Închis";
+      } else {
+        tdIntervals.textContent = intervals.map(i => `${i.open} - ${i.close}`).join(", ");
+      }
+  
+      tr.appendChild(tdIntervals);
+      scheduleBody.appendChild(tr);
+    });
+  }
+  
+  function updateStatus() {
+    if (isOpenNow()) {
+      statusDiv.textContent = "Firma este DESCHISĂ acum.";
+      statusDiv.style.color = "green";
+    } else {
+      statusDiv.textContent = "Firma este ÎNCHISĂ acum.";
+      statusDiv.style.color = "red";
+    }
+  }
+  
+  function showSchedule() {
+    generateScheduleTable();
+    updateStatus();
+    scheduleContainer.style.display = "block";
+  
+    // Dispare automat după 10 secunde
+    setTimeout(() => {
+      scheduleContainer.style.display = "none";
+    }, 10000);
+  }
+  
+  openBtn.addEventListener('click', showSchedule);
+  closeBtn.addEventListener('click', () => {
+    scheduleContainer.style.display = 'none';
+  });
+</script>

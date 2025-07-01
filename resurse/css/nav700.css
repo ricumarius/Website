@@ -1,16 +1,107 @@
-@keyframes hamburgerAppear {
+:root {
+  --highlight-color: #00ccff;
+  --culoare-deschisa: #ffffff;
+  --spatiu-mic: 0.5rem;
+}
+
+nav {
+  --latime-buton: 100%;
+  height: 100px;
+  position: relative;
+  z-index: 99;
+}
+
+/* Buton hamburger */
+#hamburger {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.3s ease;
+  position: relative;
+  width: 30px;
+  height: 24px;
+  z-index: 100;
+  margin-left: -450px;
+}
+
+#hamburger {
+  position: absolute; /* poziționare sus-stânga */
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.3s ease;
+  width: 30px;
+  height: 24px;
+  z-index: 100;
+  margin-left: 0; /* eliminăm marginile negative */
+}
+
+#hamburger:hover {
+  transform: scale(1.1);
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 4px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+  margin: 0 auto; /* centrare orizontală */
+  opacity: 1;
+  transform-origin: center;
+}
+
+.bar1 {
+  top: 0;
+  transform: translateY(0) scaleX(1) rotate(0deg) skewX(0deg);
+  animation: aparitie-hamburger 0.6s ease 0s forwards;
+}
+
+.bar2 {
+  top: 10px;
+  transform: translateY(0) scaleX(1) rotate(0deg) skewX(0deg);
+  animation: aparitie-hamburger 0.6s ease 0.3s forwards;
+}
+
+.bar3 {
+  top: 20px;
+  transform: translateY(0) scaleX(1) rotate(0deg) skewX(0deg);
+  animation: aparitie-hamburger 0.6s ease 0.6s forwards;
+}
+
+/* Transformare în X */
+#ch-menu:checked ~ #hamburger .bar1 {
+  transform: translateY(10px) rotate(45deg);
+}
+
+#ch-menu:checked ~ #hamburger .bar2 {
+  opacity: 0;
+}
+
+#ch-menu:checked ~ #hamburger .bar3 {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Animație apariție bare */
+#ch-menu:checked ~ #hamburger .bar {
+  animation: aparitie-hamburger 0.6s ease forwards;
+}
+
+/* Animație hamburger */
+@keyframes aparitie-hamburger /*hamburgerappear*/ {
   0% {
     transform: translateY(-20px) scaleX(0) rotate(-45deg) skewX(-10deg);
     background-color: transparent;
     opacity: 0;
   }
-
   50% {
     transform: translateY(5px) scaleX(1.2) rotate(15deg) skewX(5deg);
     background-color: #ff0055;
     opacity: 0.7;
   }
-
   100% {
     transform: translateY(0) scaleX(1) rotate(0deg) skewX(0deg);
     background-color: #00ccff;
@@ -18,14 +109,91 @@
   }
 }
 
+/* Checkbox ascuns */
+#ch-menu {
+  display: none;
+}
+
+/* Meniu ascuns implicit */
+ul.meniu {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+  position: fixed;
+  top: 20px;
+  left: 0;
+  padding: 2rem;
+  background-color: var(--culoare-deschisa);
+  list-style: none;
+  margin: 0;
+  z-index: 10;
+  overflow-y: auto;
+  animation: circularReveal 0.6s ease-out forwards;
+  clip-path: circle(0% at 0 0);
+}
+
+/* Meniu activ */
+#ch-menu:checked ~ ul.meniu {
+  display: flex;
+  clip-path: circle(150% at 0 0);
+}
+
+/* Linkuri din meniu */
+.meniu li {
+  padding: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.meniu li:last-child {
+  border-bottom: none;
+}
+
+.meniu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  display: block;
+  text-align: center;
+  animation: expand-text 0.4s ease forwards;
+}
+
+/* Submeniu animat */
+.submeniu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.meniu li:hover > .submeniu {
+  max-height: 200px;
+  animation: animatie_submeniu 0.3s ease-out forwards;
+}
+
+/* Animații */
 @keyframes circularReveal {
   0% {
     clip-path: circle(0% at 0 0);
     opacity: 0;
   }
-
   100% {
     clip-path: circle(150% at 0 0);
+    opacity: 1;
+  }
+}
+
+@keyframes expand-text {
+  0% {
+    letter-spacing: -2px;
+    transform: scaleY(0.7);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    letter-spacing: 0.5px;
+    transform: scaleY(1);
     opacity: 1;
   }
 }
@@ -35,181 +203,127 @@
     opacity: 0;
     transform: scaleY(0);
   }
-
   100% {
     opacity: 1;
-    transform: scaleY(100%);
+    transform: scaleY(1);
   }
 }
 
-.navbar {
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: 1140px;
-}
-
-.meniu {
-  flex-direction: column;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 80%;
-  height: 100vh;
-  flex-direction: column;
-  background: var(--culoare-deschisa);
-  padding: 2rem;
-  transition: right 0.3s ease;
-}
-
-.meniu a {
-  padding: var(--spatiu-mic);
-  width: 100%;
-  text-align: center;
-}
-
-.gallery-images img {
-  width: 100%;
-  height: auto;
-}
-
-.container-iframe {
-  max-width: 100%;
-}
-
-table {
-  width: 100%;
-  overflow-x: auto;
-  display: block;
-}
-
-th {
-  font-size: 0.9rem;
-  padding: 0.4rem;
-}
-
-td {
-  font-size: 0.9rem;
-  padding: 0.4rem;
-}
-
-body {
-  font-size: 0.95rem;
-}
-
-h1 {
-  font-size: 1.6rem;
-}
-
-h2 {
-  font-size: 1.4rem;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-#hamburger {
-  display: block;
-  cursor: pointer;
-  padding: 10px;
-  transition: transform 0.3s ease;
-  position: relative;
-  display: inline-block;
-  width: 30px;
-  height: 24px;
-  cursor: pointer;
-}
-
-#hamburger:hover {
-  transform: scale(1.1);
-}
-
-#hamburger>img {
-  height: 30px;
-  display: block;
-}
-
-ul.meniu {
-  display: none;
-  width: 100%;
-  background-color: var(--culoare-deschisa);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-ul.meniu li {
-  width: 100%;
-  padding: 12px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-ul.meniu li:last-child {
-  border-bottom: none;
-}
-
-ul.meniu ul {
-  color: #00B4D8;
-  animation: circularReveal 1s ease-out forwards;
-  clip-path: circle(0% at 0 0);
-  transform-origin: top left;
-  overflow: hidden;
-  background-color: var(--culoare-deschisa);
-}
-
-#ch-menu:checked+ul.meniu {
-  display: block;
-  position: absolute;
-  z-index: 10;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.hamburger-container {
-  position: relative;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-}
-
-.bar {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: white;
-  border-radius: 2px;
-  transition: all 0.5s ease;
-  opacity: 1;
-  display: block;
-  width: 30px;
-  height: 4px;
-  margin: 6px auto;
-  background-color: #333;
-  border-radius: 2px;
-  opacity: 0;
-  transform: scaleX(0);
-  animation: hamburgerAppear 1s ease-in-out forwards;
-}
-
-.bar1 {
-  top: -10px;
-  animation-delay: 0ms;
-}
-
-.bar2 {
-  top: 0px;
-  animation-delay: 300ms;
-}
-
-.bar3 {
-  top: 10px;
-  animation-delay: 600ms;
-}
 
 #gr {
   grid-template-columns: 1fr;
+}
+
+#stiri {
+  column-count: 2;
+}
+
+#grid-pagina {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  font-size: 0.9em;
+}
+
+.tabel-produse-transpus table {
+  display: block;
+  width: 100%;
+}
+
+.tabel-produse-transpus thead {
+  display: block;
+  width: 100%;
+  display: none;
+}
+
+.tabel-produse-transpus tbody {
+  display: block;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.tabel-produse-transpus th {
+  display: block;
+  width: 100%;
+}
+
+.tabel-produse-transpus td {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding-left: 50%;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.tabel-produse-transpus td::before {
+  content: attr(data-label);
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-weight: bold;
+  color: #444;
+}
+
+.tabel-produse-transpus tr {
+  display: block;
+  width: 100%;
+}
+
+#ch-menu:checked ~ #hamburger .bar1 {
+  transform: translateY(10px) rotate(45deg) skewX(5deg);
+}
+
+#ch-menu:checked ~ #hamburger .bar2 {
+  opacity: 0;
+}
+
+#ch-menu:checked ~ #hamburger .bar3 {
+  transform: translateY(-10px) rotate(-45deg) skewX(-5deg);
+}
+
+@keyframes aparitie-hamburger {
+  0% {
+    transform: translateY(-20px) scaleX(0) rotate(-45deg) skewX(-10deg);
+    background-color: transparent;
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(5px) scaleX(1.2) rotate(15deg) skewX(5deg);
+    background-color: #ff0055;
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0) scaleX(1) rotate(0deg) skewX(0deg);
+    background-color: #00ccff;
+    opacity: 1;
+  }
+}
+
+@keyframes expand-text {
+  0% {
+    letter-spacing: -2px;
+    transform: scaleY(0.7);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    letter-spacing: 0.5px;
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+.tabel-produse-scroll {
+  max-width: 80%;
+}
+
+.galerie-totala{
+  display: none;
 }

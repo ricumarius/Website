@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <title>LOUD MUSIC</title>
+  <meta name="keywords" content="<b>Instrumente Muzicale</b>, <b>Chitara</b>, <b>Boxe</b>, <b>Microfon</b>, <b>Tobe</b>, <b>Pian</b>, <b>Monitoare de Studio</b>, <b>Reparații</b>, <b>Sintetizator</b>, <b>Reduceri</b>">
+  <meta name="description" content="<b>Magazin de instrumente muzicale</b> și accesorii.">
+  <%- include("../fragmente/head.ejs") %>
+</head>
+
+<body>
+  <%- include("../fragmente/header.ejs") %>
+  <main>
+    <section>
+      <h2>Pagină produs</h2>
+      <article id="art-produs">
+        <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+        <p>Pret: <span class="pret"><%- locals.prod.pret %> RON </span></p>
+        <p>
+          Descriere:
+          <span class="descriere"><%- locals.prod.descriere %> </span>
+        </p>
+        <p>
+          Materiale:
+          <span class="materiale"><%- locals.prod.materiale %> </span>
+        </p>
+        <p>
+          Scala: <span class="scala"><%- locals.prod.scala %> mm </span>
+        </p>
+        <p>Greutate: <span class="Greutate"><%- locals.prod.greutate %> kg </span></p>
+        <p>
+          Categorie:
+          <span class="categorie"><%- locals.prod.categorie %> </span>
+        </p>
+        <p>
+          Deja acordata:
+          <span class="deja_acordata"><%- locals.prod.deja_acordata %> </span>
+        </p>
+        <p>
+          Data adăugare:
+          <span class="categorie"><%- locals.prod.data_adaugare %> </span>
+        </p>
+        <figure class="imag-produs">
+          <img src="/resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
+        </figure>
+        <button class="btn btn-warning btn-compara" data-id="<%- locals.prod.id %>" data-nume="<%- locals.prod.nume %>">compară</button>
+
+      </article>
+    </section>
+    <section id="produse-similare">
+      <h3>Produse similare</h3>
+      <div class="lista-produse-similare">
+        <% if (produseSimilare.length === 0) { %>
+        <p>Nu există produse similare.</p>
+        <% } else { %>
+        <% produseSimilare.forEach(function(p) { %>
+        <div class="produs-similar" style="border:1px solid #ccc; padding:10px; margin:5px; width:200px; display:inline-block;">
+          <a href="/produs/<%= p.id %>" title="<%= p.nume %>">
+            <img src="/resurse/imagini/produse/<%= p.imagine %>" alt="Imagine <%= p.nume %>" style="width:100%; height:auto;" />
+            <h4><%= p.nume %></h4>
+          </a>
+          <p>Categorie: <%= p.categorie %> </p>
+          <p>Preț: <%= p.pret %> RON</p>
+          <% if (p.materiale) { %><p>Materiale: <%= p.materiale %></p><% } %>
+          <% if (p.scala) { %><p>Scala: <%= p.scala %> mm</p><% } %>
+        </div>
+        <% }); %>
+        <% } %>
+      </div>
+    </section>
+
+  </main>
+
+  <%- include("../fragmente/footer") %>
+</body>
+<script>
+const CHEIE_COMPARARE = "produseComparare";
+const CHEIE_TIMESTAMP = "comparareUltimClick";
+
+function getProduseComparate() {
+   const raw = localStorage.getItem(CHEIE_COMPARARE);
+   return raw ? JSON.parse(raw) : [];
+}
+
+function salvareComparare(produse) {
+   localStorage.setItem(CHEIE_COMPARARE, JSON.stringify(produse));
+   localStorage.setItem(CHEIE_TIMESTAMP, Date.now().toString());  // actualizare timestamp
+}
+
+function stergeProdusComparat(id) {
+   let produse = getProduseComparate().filter(p => p.id !== id);
+   salvareComparare(produse);
+   afiseazaContainerComparare();
+}
+
+function afiseazaContainerComparare() {
+   const produse = getProduseComparate();
+   let container = document.getElementById("container-comparare");
+
+   if (produse.length === 0) {
+       if (container) container.remove();
+       return;
+   }
+
+   if (!container) {
+       container = document.createElement("div");
+       container.id = "container-comparare";
+       container.style.position = "fixed";
+       container.style.bottom = "10px";
+       container.style.right = "10px";
+       container.style.background = "#f8f9fa";
+       container.style.border = "1px solid #333";
+       container.style.padding = "10px";
+       container.style.zIndex = "10000";
+       document.body.appendChild(container);
+   }
+
+   container.innerHTML = "";
+
+   produse.forEach(p => {
+       let div = document.createElement("div");
+       div.style.marginBottom = "5px";
+       div.textContent = p.nume + " ";
+
+       let btnSterge = document.createElement("button");
+       btnSterge.textContent = "🗑️";
+       btnSterge.addEventListener("click", () => stergeProdusComparat(p.id));
+
+       div.appendChild(btnSterge);
+       container.appendChild(div);
+   });
+
+   if (produse.length === 2) {
+       let btnAfiseaza = document.createElement("button");
+       btnAfiseaza.textContent = "afișează";
+       btnAfiseaza.addEventListener("click", deschideComparare);
+       container.appendChild(btnAfiseaza);
+       dezactiveazaButonComparare();
+   } else {
+       activeazaButonComparare();
+   }
+}
+
+function deschideComparare() {
+   window.open("/comparare", "_blank");
+}
+
+function dezactiveazaButonComparare() {
+   document.querySelectorAll(".btn-compara").forEach(btn => {
+       btn.disabled = true;
+       btn.title = "ștergeți un produs din lista de comparare";
+   });
+}
+
+function activeazaButonComparare() {
+   document.querySelectorAll(".btn-compara").forEach(btn => {
+       btn.disabled = false;
+       btn.title = "";
+   });
+}
+
+function adaugaLaComparare(id, nume) {
+   let produse = getProduseComparate();
+   if (produse.length >= 2 || produse.find(p => p.id === id)) return;
+   produse.push({ id, nume });
+   salvareComparare(produse);  // aici se actualizează timestamp, deci “clickul” e înregistrat
+   afiseazaContainerComparare();
+}
+
+function verificaTimpExpirare() {
+   const timestamp = parseInt(localStorage.getItem(CHEIE_TIMESTAMP));
+   if (timestamp && (Date.now() - timestamp) > 86400000) { // 24h în milisecunde
+       localStorage.removeItem(CHEIE_COMPARARE);
+       localStorage.removeItem(CHEIE_TIMESTAMP);
+       afiseazaContainerComparare();
+   }
+}
+function adaugaLaComparatie(id) {
+ const produse = getProduseComparate();
+ if (produse.length >= 2) {
+   alert("Poți compara doar 2 produse.");
+   return;
+ }
+ produse.push({ id });
+ localStorage.setItem(CHEIE_COMPARARE, JSON.stringify(produse));
+}
+
+// Apelare la încărcare
+document.addEventListener("DOMContentLoaded", () => {
+   verificaTimpExpirare();
+   afiseazaContainerComparare();
+});
+
+  
+  window.addEventListener("DOMContentLoaded", () => {
+   verificaTimpExpirare();
+   afiseazaContainerComparare();
+
+   document.querySelectorAll(".btn-compara").forEach(btn => {
+       btn.addEventListener("click", function () {
+           const id = this.getAttribute("data-id");
+           const nume = this.getAttribute("data-nume");
+           adaugaLaComparare(id, nume);
+       });
+   });
+ });
+ verificaTimpExpirare();
+   afiseazaContainerComparare();
+ 
+   // Presupunem că ai deja butoane cu .btn-compara și data-id, data-nume în pagină
+   document.querySelectorAll(".btn-compara").forEach(btn => {
+     btn.addEventListener("click", () => {
+       const id = btn.getAttribute("data-id");
+       const nume = btn.getAttribute("data-nume");
+       adaugaLaComparare(id, nume);
+     });
+   });
+
+
+</script>
+</html>
+
+
